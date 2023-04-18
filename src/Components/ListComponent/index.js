@@ -1,14 +1,17 @@
 import React from 'react';
 
-function ListComponent({ activities }) {
+function ListComponent({ activities, isGoodWeather }) {
     return (
-        <ul>
-            {activities.map(activity => (
-                <li key={activity.id}>
-                    {activity.name} (good weather: {activity.isForGoodWeather.toString()})
-                </li>
-            ))}
-        </ul>
+        <>
+            <h2>{isGoodWeather ? 'Activities for good weather' : 'Activities for bad weather'}</h2>
+            <ul>
+                {activities.map(activity => (
+                    <li key={activity.id}>
+                        {activity.name} {activity.isForGoodWeather ? '🌞' : '🌧'}
+                    </li>
+                ))}
+            </ul>
+        </>
     );
 }
 

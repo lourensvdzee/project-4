@@ -4,6 +4,7 @@ import ListComponent from './Components/ListComponent';
 
 function App() {
   const [activities, setActivities] = useState([]);
+  const isGoodWeather = true; // hardcoded for simplicity
 
   useEffect(() => {
     const storedActivities = JSON.parse(localStorage.getItem('activities')) || [];
@@ -18,10 +19,12 @@ function App() {
     setActivities(prevActivities => [...prevActivities, activity]);
   }
 
+  const filteredActivities = activities.filter(activity => activity.isForGoodWeather === isGoodWeather);
+
   return (
     <div>
       <Form onAddActivity={handleAddActivity} />
-      <ListComponent activities={activities} />
+      <ListComponent activities={filteredActivities} isGoodWeather={isGoodWeather} />
     </div>
   );
 }
