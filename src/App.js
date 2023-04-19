@@ -4,12 +4,27 @@ import ListComponent from './Components/ListComponent';
 
 function App() {
   const [activities, setActivities] = useState([]);
-  const isGoodWeather = true; // hardcoded for simplicity
+  const [weather, setWeather] = useState({});
 
   useEffect(() => {
     const storedActivities = JSON.parse(localStorage.getItem('activities')) || [];
     setActivities(storedActivities);
   }, []);
+
+  useEffect(() => {
+    async function fetchWeather() {
+      try {
+        const response = await fetch('https://example-apis.vercel.app/api/weather');
+        const data = await response.json();
+        setWeather(data.isGoodWeather);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    fetchWeather();
+  }, []);
+
 
   useEffect(() => {
     localStorage.setItem('activities', JSON.stringify(activities));
@@ -19,6 +34,7 @@ function App() {
     setActivities(prevActivities => [...prevActivities, activity]);
   }
 
+  const isGoodWeather = weather.isGoodWeather || false;
   const filteredActivities = activities.filter(activity => activity.isForGoodWeather === isGoodWeather);
 
   return (
