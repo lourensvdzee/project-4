@@ -43,11 +43,12 @@ function App() {
   const filteredActivities = activities.filter(activity => activity.isForGoodWeather === weather);
 
   return (
-    <div>
+    <div className="app-container">
       <h1>{condition} {temperature} °C</h1>
       <ListComponent activities={filteredActivities} isGoodWeather={weather} onDeleteActivity={handleDeleteActivity} />
       <Form onAddActivity={handleAddActivity} />
     </div>
   );
+
 }
 export default App;

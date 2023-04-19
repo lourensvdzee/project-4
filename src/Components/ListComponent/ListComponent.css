@@ -8,3 +8,18 @@ li {
   display: block;
   margin-bottom: 10px;
 }
+
+.list-item {
+  background-color: #9df1df;
+  margin: 10px;
+  padding: 10px;
+  display: inline-block;
+  width: 150px;
+  height: 30px;
+  margin: 10px;
+  padding: 10px;
+  background-color: #9df1df;
+  border-radius: 10px;
+  text-align: center;
+  word-wrap: break-word;
+}
