@@ -2,11 +2,52 @@
   width: 100%;
   background-color: #8dcbe6;
   position: fixed;
-  bottom: 0;
+  bottom: 0px;
   height: 20vh;
   margin-bottom: 0;
+  z-index: 0;
 }
 
 .form-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   margin: 10px;
+  margin-top: 0px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.submit {
+  align-self: flex-end;
+  transform: translate(-50px, -49px);
+  background-color: #ffea20;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+label {
+  font-size: smaller;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+#weatherInput {
+  background-color: #ffea20;
+}
+
+.form-title {
+  font-size: larger;
 }

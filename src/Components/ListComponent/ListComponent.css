@@ -1,3 +1,7 @@
+.list-container {
+  z-index: 1;
+}
+
 .list-container h2 {
   font-size: larger;
   padding: 25px;
@@ -33,12 +37,13 @@ li {
 
 .weather-icon {
   margin-right: 5px;
+  font-size: 15px;
 }
 
 .activity-text {
   flex: 1;
   text-align: center;
-  word-wrap: break-word;
+  font-size: small;
 }
 
 .delete-button {
@@ -47,4 +52,9 @@ li {
   cursor: pointer;
   padding: 0;
   margin-left: 5px;
+  font-size: 10px;
+}
+
+h2 {
+  text-align: center;
 }

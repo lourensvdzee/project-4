@@ -19,7 +19,7 @@ function Form({ onAddActivity }) {
     return (
         <form className="form" onSubmit={handleSubmit}>
             <div className="form-text">
-                <h2>Add new activity:</h2>
+                <h2 className="form-title">Add new activity:</h2>
                 <div>
                     <label htmlFor="nameInput">Name:</label>
                     <input
@@ -28,7 +28,7 @@ function Form({ onAddActivity }) {
                         value={name}
                         onChange={(event) => setName(event.target.value)}
                         placeholder='add new activity here'
-                        maxLength={40}
+                        maxLength={35}
                     />
                 </div>
                 <div>
@@ -40,7 +40,7 @@ function Form({ onAddActivity }) {
                         onChange={(event) => setIsForGoodWeather(event.target.checked)}
                     />
                 </div>
-                <button type="submit">Submit</button>
+                <button class="submit" type="submit">Submit</button>
             </div>
         </form>
     );
