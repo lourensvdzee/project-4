@@ -41,8 +41,8 @@ function App() {
   return (
     <div>
       <h1>{condition} {temperature} °C</h1>
-      <Form onAddActivity={handleAddActivity} />
       <ListComponent activities={filteredActivities} isGoodWeather={weather} onDeleteActivity={handleDeleteActivity} />
+      <Form onAddActivity={handleAddActivity} />
     </div>
   );
 }

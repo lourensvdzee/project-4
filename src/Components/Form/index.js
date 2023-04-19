@@ -16,7 +16,7 @@ function Form({ onAddActivity }) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <h2>Add an activity</h2>
+            <h2>Add new activity:</h2>
             <div>
                 <label htmlFor="nameInput">Name:</label>
                 <input
@@ -27,7 +27,7 @@ function Form({ onAddActivity }) {
                 />
             </div>
             <div>
-                <label htmlFor="weatherInput">Good weather:</label>
+                <label htmlFor="weatherInput">Good weather activity:</label>
                 <input
                     type="checkbox"
                     id="weatherInput"
@@ -35,7 +35,7 @@ function Form({ onAddActivity }) {
                     onChange={(event) => setIsForGoodWeather(event.target.checked)}
                 />
             </div>
-            <button type="submit">Add</button>
+            <button type="submit">Submit</button>
         </form>
     );
 }

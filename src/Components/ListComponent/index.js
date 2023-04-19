@@ -7,8 +7,8 @@ function ListComponent({ activities, isGoodWeather, onDeleteActivity }) {
             <ul>
                 {activities.map(activity => (
                     <li key={activity.id}>
-                        {activity.name} {activity.isForGoodWeather ? '🌞' : '🌧'}
-                        <button onClick={() => onDeleteActivity(activity.id)}>Delete</button>
+                        {activity.isForGoodWeather ? '🌞 ' : '🌧 '} {activity.name}
+                        <button onClick={() => onDeleteActivity(activity.id)}>x</button>
                     </li>
                 ))}
             </ul>
