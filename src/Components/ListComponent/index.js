@@ -5,8 +5,9 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
 function ListComponent({ activities, isGoodWeather, onDeleteActivity }) {
     return (
-        <>
+        <><div className='sub-header'>
             <h2>{isGoodWeather ? "The weather is awesome! Go outside and:" : "Bad weather outside! Here's what you can do now:"}</h2>
+        </div>
             <ul className="list-container">
                 {activities.map(activity => (
                     <li className="list-item" key={activity.id}>

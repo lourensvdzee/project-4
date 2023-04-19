@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { uid } from 'uid/secure';
+import './Form.css';
+
 
 function Form({ onAddActivity }) {
     const [name, setName] = useState('');
@@ -15,27 +17,31 @@ function Form({ onAddActivity }) {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <h2>Add new activity:</h2>
-            <div>
-                <label htmlFor="nameInput">Name:</label>
-                <input
-                    type="text"
-                    id="nameInput"
-                    value={name}
-                    onChange={(event) => setName(event.target.value)}
-                />
+        <form className="form" onSubmit={handleSubmit}>
+            <div className="form-text">
+                <h2>Add new activity:</h2>
+                <div>
+                    <label htmlFor="nameInput">Name:</label>
+                    <input
+                        type="text"
+                        id="nameInput"
+                        value={name}
+                        onChange={(event) => setName(event.target.value)}
+                        placeholder='add new activity here'
+                        maxLength={40}
+                    />
+                </div>
+                <div>
+                    <label htmlFor="weatherInput">Good weather activity:</label>
+                    <input
+                        type="checkbox"
+                        id="weatherInput"
+                        checked={isForGoodWeather}
+                        onChange={(event) => setIsForGoodWeather(event.target.checked)}
+                    />
+                </div>
+                <button type="submit">Submit</button>
             </div>
-            <div>
-                <label htmlFor="weatherInput">Good weather activity:</label>
-                <input
-                    type="checkbox"
-                    id="weatherInput"
-                    checked={isForGoodWeather}
-                    onChange={(event) => setIsForGoodWeather(event.target.checked)}
-                />
-            </div>
-            <button type="submit">Submit</button>
         </form>
     );
 }

@@ -1,3 +1,10 @@
+.list-container h2 {
+  font-size: larger;
+  padding: 25px;
+  position: fixed;
+  background-color: #e3f6ff;
+}
+
 ul {
   list-style: none;
   padding: 0;
@@ -12,7 +19,7 @@ li {
   background-color: #9df1df;
   margin: 10px;
   padding: 10px;
-  width: 80vw;
+  width: 90%;
   height: 30px;
   border-radius: 10px;
 }

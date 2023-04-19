@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Form from './Components/Form';
 import ListComponent from './Components/ListComponent';
 import fetchData from './Components/FetchApi';
+import './index.css';
 
 function App() {
   const [activities, setActivities] = useLocalStorageState("activities", { defaultValue: [] });
@@ -44,7 +45,9 @@ function App() {
 
   return (
     <div className="app-container">
-      <h1>{condition} {temperature} °C</h1>
+      <header className="header">
+        <h1 className="weather-text">{condition} {temperature} °C</h1>
+      </header>
       <ListComponent activities={filteredActivities} isGoodWeather={weather} onDeleteActivity={handleDeleteActivity} />
       <Form onAddActivity={handleAddActivity} />
     </div>

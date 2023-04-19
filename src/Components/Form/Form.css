@@ -1,0 +1,12 @@
+.form {
+  width: 100%;
+  background-color: #8dcbe6;
+  position: fixed;
+  bottom: 0;
+  height: 20vh;
+  margin-bottom: 0;
+}
+
+.form-text {
+  margin: 10px;
+}
