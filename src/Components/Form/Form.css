@@ -43,10 +43,10 @@ input {
   background-color: orange;
 }
 
-.submit:active {
+/* .submit:active {
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
   transform: translate(-50px, -50px);
-}
+} */
 
 .submit:focus {
   background-color: #ffea20;

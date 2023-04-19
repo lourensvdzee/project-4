@@ -37,18 +37,20 @@ function App() {
       case '☁️':
       case '⛅':
       case '🌥':
+      case '🌤️':
+      case '🌤':
+      case '🌥':
         header.style.backgroundImage = `url('https://media.giphy.com/media/lOkbL3MJnEtHi/giphy.gif')`;
+        // header.style.backgroundImage = `url('https://media.giphy.com/media/jOafPZq6WvCZIjXka3/giphy.gif')`;
         break;
       case '❄️':
-        header.style.backgroundImage = `url('https://media.giphy.com/media/9jvjuSSkMOYTyQfJji/giphy.gif')`;
+        header.style.backgroundImage = `url('https://media.giphy.com/media/7Bgpw7PwdxoDC/giphy.gif')`;
         break;
-      case '🌤️':
       case '☀️':
       case '🌞':
       case '🌝':
-      case '🌤':
-      case '🌥':
-        header.style.backgroundImage = `url('https://media.giphy.com/media/YhMeFrW7jPegM/giphy.gif')`;
+        // header.style.backgroundImage = `url('https://media.giphy.com/media/YhMeFrW7jPegM/giphy.gif')`;
+        header.style.backgroundImage = `url('https://media.giphy.com/media/3o6ozgD5lrJfGZQgiQ/giphy.gif')`;
         break;
       case '🌦':
       case '🌧':
@@ -60,7 +62,9 @@ function App() {
         break;
       case '⛈':
       case '🌩':
-        header.style.backgroundImage = `url('https://media.giphy.com/media/o8A56JaNJQFSU/giphy.gif')`;
+      case '⛈️':
+        // header.style.backgroundImage = `url('https://media.giphy.com/media/o8A56JaNJQFSU/giphy.gif')`;
+        header.style.backgroundImage = `url('https://media.giphy.com/media/qRY3cPYRkyQh2/giphy.gif')`;
         break;
       default:
         header.style.backgroundImage = '';
@@ -68,7 +72,7 @@ function App() {
   }, [condition]);
 
   function handleAddActivity(activity) {
-    setActivities(prevActivities => [...prevActivities, activity]);
+    setActivities(prevActivities => [activity, ...prevActivities]);
   }
 
   function handleDeleteActivity(id) {

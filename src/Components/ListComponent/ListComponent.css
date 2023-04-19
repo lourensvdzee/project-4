@@ -1,11 +1,9 @@
 .list-container {
   z-index: 1;
+  margin-top: 55px;
 }
 
-.list-container h2 {
-  font-size: larger;
-  padding: 25px;
-  position: fixed;
+.sub-header {
   background-color: #e3f6ff;
 }
 
@@ -17,6 +15,7 @@ ul {
 
 li {
   margin-bottom: 10px;
+  align-items: center;
 }
 
 .list-item {
