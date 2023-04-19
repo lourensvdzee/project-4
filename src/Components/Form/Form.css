@@ -32,10 +32,24 @@ input {
 
 .submit {
   align-self: flex-end;
-  transform: translate(-50px, -49px);
+  transform: translate(-35px, -49px);
   background-color: #ffea20;
   padding: 5px;
   border-radius: 5px;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.submit:hover {
+  background-color: orange;
+}
+
+.submit:active {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+  transform: translate(-50px, -50px);
+}
+
+.submit:focus {
+  background-color: #ffea20;
 }
 
 label {

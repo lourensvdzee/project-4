@@ -29,6 +29,8 @@ function Form({ onAddActivity }) {
                         onChange={(event) => setName(event.target.value)}
                         placeholder='add new activity here'
                         maxLength={35}
+                        minLength={1}
+                        required
                     />
                 </div>
                 <div>
