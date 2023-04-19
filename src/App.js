@@ -31,6 +31,42 @@ function App() {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const header = document.querySelector('.header');
+    switch (condition) {
+      case '☁️':
+      case '⛅':
+      case '🌥':
+        header.style.backgroundImage = `url('https://media.giphy.com/media/lOkbL3MJnEtHi/giphy.gif')`;
+        break;
+      case '❄️':
+        header.style.backgroundImage = `url('https://media.giphy.com/media/9jvjuSSkMOYTyQfJji/giphy.gif')`;
+        break;
+      case '🌤️':
+      case '☀️':
+      case '🌞':
+      case '🌝':
+      case '🌤':
+      case '🌥':
+        header.style.backgroundImage = `url('https://media.giphy.com/media/YhMeFrW7jPegM/giphy.gif')`;
+        break;
+      case '🌦':
+      case '🌧':
+      case '🌨':
+      case '💧':
+      case '☔':
+      case '🌧️':
+        header.style.backgroundImage = `url('https://media.giphy.com/media/gRnSZSRzOJeG4/giphy.gif')`;
+        break;
+      case '⛈':
+      case '🌩':
+        header.style.backgroundImage = `url('https://media.giphy.com/media/o8A56JaNJQFSU/giphy.gif')`;
+        break;
+      default:
+        header.style.backgroundImage = '';
+    }
+  }, [condition]);
+
   function handleAddActivity(activity) {
     setActivities(prevActivities => [...prevActivities, activity]);
   }
