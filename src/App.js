@@ -35,7 +35,9 @@ function App() {
   }
 
   function handleDeleteActivity(id) {
-    setActivities(prevActivities => prevActivities.filter(activity => activity.id !== id));
+    if (window.confirm("Are you sure you want to delete this activity?")) {
+      setActivities(prevActivities => prevActivities.filter(activity => activity.id !== id));
+    }
   }
 
   const filteredActivities = activities.filter(activity => activity.isForGoodWeather === weather);
