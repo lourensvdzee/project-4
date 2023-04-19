@@ -1,7 +1,7 @@
 import useLocalStorageState from 'use-local-storage-state';
 import React, { useEffect, useState } from 'react';
 import Form from './Components/Form';
-import ListComponent from './Components/ListComponent';
+import ListFiltering from './Components/ListFiltering';
 
 function App() {
   const [activities, setActivities] = useLocalStorageState("activities", { defaultValue: [] });
@@ -40,12 +40,10 @@ function App() {
     setActivities(prevActivities => prevActivities.filter(activity => activity.id !== id));
   }
 
-  const filteredActivities = activities.filter(activity => activity.isForGoodWeather === weather);
-
   return (
     <div>
       <h1>{condition} {temperature} °C</h1>
-      <ListComponent activities={filteredActivities} isGoodWeather={weather} onDeleteActivity={handleDeleteActivity} />
+      <ListFiltering activities={activities} isGoodWeather={weather} onDeleteActivity={handleDeleteActivity} />
       <Form onAddActivity={handleAddActivity} />
     </div>
   );
