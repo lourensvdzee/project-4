@@ -1,7 +1,8 @@
 import useLocalStorageState from 'use-local-storage-state';
 import React, { useEffect, useState } from 'react';
 import Form from './Components/Form';
-import ListFiltering from './Components/ListFiltering';
+import ListComponent from './Components/ListComponent';
+import fetchData from './Components/FetchApi';
 
 function App() {
   const [activities, setActivities] = useLocalStorageState("activities", { defaultValue: [] });
@@ -10,14 +11,9 @@ function App() {
   const [temperature, setTemperature] = useState('');
 
   useEffect(() => {
-    localStorage.setItem('activities', JSON.stringify(activities));
-  }, [activities]);
-
-  useEffect(() => {
     const fetchWeather = async () => {
       try {
-        const response = await fetch("https://example-apis.vercel.app/api/weather");
-        const data = await response.json();
+        const data = await fetchData()
         setWeather(data.isGoodWeather);
         setCondition(data.condition);
         setTemperature(data.temperature);
@@ -25,9 +21,11 @@ function App() {
         console.log(error);
       }
     }
+    fetchWeather();
     const interval = setInterval(() => {
       fetchWeather();
     }, 5000);
+
     //clean-up function
     return () => clearInterval(interval);
   }, []);
@@ -40,13 +38,14 @@ function App() {
     setActivities(prevActivities => prevActivities.filter(activity => activity.id !== id));
   }
 
+  const filteredActivities = activities.filter(activity => activity.isForGoodWeather === weather);
+
   return (
     <div>
       <h1>{condition} {temperature} °C</h1>
-      <ListFiltering activities={activities} isGoodWeather={weather} onDeleteActivity={handleDeleteActivity} />
+      <ListComponent activities={filteredActivities} isGoodWeather={weather} onDeleteActivity={handleDeleteActivity} />
       <Form onAddActivity={handleAddActivity} />
     </div>
   );
 }
-
 export default App;
