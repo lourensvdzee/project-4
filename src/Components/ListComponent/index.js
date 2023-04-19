@@ -1,6 +1,7 @@
 import React from 'react';
 import './ListComponent.css';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
 function ListComponent({ activities, isGoodWeather, onDeleteActivity }) {
     return (
@@ -9,8 +10,13 @@ function ListComponent({ activities, isGoodWeather, onDeleteActivity }) {
             <ul className="list-container">
                 {activities.map(activity => (
                     <li className="list-item" key={activity.id}>
-                        {activity.isForGoodWeather ? '🌞 ' : '🌧 '} {activity.name}
-                        <button onClick={() => onDeleteActivity(activity.id)}>x</button>
+                        <div className="activity-container">
+                            <span className="weather-icon">{activity.isForGoodWeather ? '🌞' : '🌧'}</span>
+                            <span className="activity-text">{activity.name}</span>
+                            <button className="delete-button" onClick={() => onDeleteActivity(activity.id)}>
+                                <FontAwesomeIcon icon={faTrash} />
+                            </button>
+                        </div>
                     </li>
                 ))}
             </ul>
