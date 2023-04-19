@@ -25,7 +25,11 @@ function App() {
         console.log(error);
       }
     }
-    fetchWeather();
+    const interval = setInterval(() => {
+      fetchWeather();
+    }, 5000);
+    //clean-up function
+    return () => clearInterval(interval);
   }, []);
 
   function handleAddActivity(activity) {
