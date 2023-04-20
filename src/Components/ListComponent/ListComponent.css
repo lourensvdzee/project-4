@@ -1,0 +1,59 @@
+.list-container {
+  z-index: 1;
+  margin-top: 55px;
+}
+
+.sub-header {
+  background-color: #e3f6ff;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.list-item {
+  background-color: #9df1df;
+  margin: 10px;
+  padding: 10px;
+  width: 90%;
+  height: 30px;
+  border-radius: 10px;
+}
+
+.activity-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.weather-icon {
+  margin-right: 5px;
+  font-size: 15px;
+}
+
+.activity-text {
+  flex: 1;
+  text-align: center;
+  font-size: small;
+}
+
+.delete-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 5px;
+  font-size: 10px;
+}
+
+h2 {
+  text-align: center;
+}
