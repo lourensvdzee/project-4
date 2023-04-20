@@ -44,6 +44,7 @@ function App() {
         // header.style.backgroundImage = `url('https://media.giphy.com/media/jOafPZq6WvCZIjXka3/giphy.gif')`;
         break;
       case '❄️':
+      case '🌨️':
         header.style.backgroundImage = `url('https://media.giphy.com/media/7Bgpw7PwdxoDC/giphy.gif')`;
         break;
       case '☀️':
